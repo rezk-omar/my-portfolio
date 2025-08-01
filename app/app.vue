@@ -19,7 +19,7 @@
       <!-- Desktop Navbar -->
         <ul class="hidden lg:flex gap-6 rounded-0">
           <li v-for="(item, index) in navItems" :key="index" class="list-group-item rounded-0">
-            <a :href="item.href" class="hover:text-[#ce3662] font-bold text-[#ededed] text-[20px] md:text-[35px]">
+            <a :href="item.href" class="hover:text-[#ce3662] font-bold text-[#ededed] text-[20px] md:text-[25px]">
               {{ item.name }}
             </a>
           </li>
@@ -28,7 +28,7 @@
         <!-- Mobile Navbar -->
         <ul v-if="isOpen" class="lg:hidden list-group absolute left-0 top-full w-full bg-white text-right rounded-0">
           <li v-for="(item, index) in navItems" :key="index" class="list-group-item font-bold text-[#332872] rounded-0">
-            <a :href="item.href" class="hover:text-[#ce3662] font-bold text-[#081b29] text-[20px] md:text-[35px]">
+            <a :href="item.href" class="hover:text-[#ce3662] font-bold text-[#081b29] text-[20px] md:text-[25px]">
               {{ item.name }}
             </a>
           </li>
@@ -39,14 +39,14 @@
 
   <section class="header-container">
     <div class="header-content">
-      <h1 class="text-[20px] md:text-[50px] text-[#ededed] font-semibold">Hi, I'm Omar Rezk</h1>
+      <h1 class="text-[20px] md:text-[30px] text-[#ededed] font-semibold">Hi, I'm Omar Rezk</h1>
       <div class="header-box">
-        <p class="text-[20px] md:text-[50px] text-[#ededed] font-semibold">I'm an aspiring</p>
-        <span class="text-[20px] md:text-[50px] text-[#00abf0] font-semibold">{{ currentHeader }}</span>
+        <p class="text-[20px] md:text-[30px] text-[#ededed] font-semibold">I'm an aspiring</p>
+        <span class="text-[20px] md:text-[30px] text-[#00abf0] font-semibold">{{ currentHeader }}</span>
       </div>
       <div class="btn-box">
-        <a href="" class="btn text-[15px] md:text-[25px] text-[#ededed]">Resume</a>
-        <a href="" class="btn text-[15px] md:text-[25px] text-[#ededed]">Let's Talk</a>
+        <a href="/files/OmarRezk_FinalResume.docx.pdf" class="btn text-[15px] md:text-[25px] text-[#ededed]">Resume</a>
+        <a href="mailto:omar.rizk6@gmail.com" class="btn text-[15px] md:text-[25px] text-[#ededed]">Let's Talk</a>
       </div>
     </div>
   </section>
@@ -205,7 +205,7 @@ body {
   letter-spacing: 1px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .navBar {
     padding: 0 10%;
   }
