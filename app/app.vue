@@ -45,8 +45,8 @@
         <span class="text-[20px] md:text-[30px] text-[#00abf0] font-semibold">{{ currentHeader }}</span>
       </div>
       <div class="btn-box">
-        <a href="/files/OmarRezk_FinalResume.docx.pdf" class="btn text-[15px] md:text-[25px] text-[#ededed]">Resume</a>
-        <a href="mailto:omar.rizk6@gmail.com" class="btn text-[15px] md:text-[25px] text-[#ededed]">Let's Talk</a>
+        <a href="/files/OmarRezk_FinalResume.docx.pdf" class="btn btnLink text-[15px] md:text-[25px] text-[#ededed]">Resume</a>
+        <a href="mailto:omar.rizk6@gmail.com" class="btn btnLink text-[15px] md:text-[25px] text-[#ededed]">Let's Talk</a>
       </div>
     </div>
   </section>
@@ -191,7 +191,7 @@ body {
   margin-top: 30px;
 }
 
-.btn-box a {
+.btn-box .btnLink {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -203,6 +203,31 @@ body {
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;    
+  z-index: 1; 
+}
+
+.btn-box a:nth-child(2) {
+  background: transparent;
+  color: #00abf0;
+}
+
+.btn-box a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: red;
+  z-index: -1;
+  transition: .5s;
+}
+
+.btn-box a:hover::before {
+  width: 100%;
+
 }
 
 @media screen and (min-width: 768px) {
