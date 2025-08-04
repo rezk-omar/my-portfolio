@@ -20,9 +20,9 @@
         <ul class="hidden lg:flex gap-6 rounded-0">
           <li v-for="(item, index) in navItems" :key="index" class="list-group-item rounded-0">
             <a :href="item.href" :class="[
-    'font-bold text-[20px] md:text-[25px] hover:text-[#00abf0]',
-    scrolledPastBanner ? 'text-[#000f36]' : 'text-[#ededed]'
-  ]">
+              'font-bold text-[20px] md:text-[25px] hover:text-[#00abf0]',
+              scrolledPastBanner ? 'text-[#000f36]' : 'text-[#ededed]'
+              ]">
               {{ item.name }}
             </a>
           </li>
@@ -33,9 +33,6 @@
         <ul
             v-if="isOpen"
             class="lg:hidden list-group absolute left-0 top-full w-full text-right rounded-0 transition duration-300"
-            :class="[
-              scrolledPastBanner ? 'bg-[#000f36] text-[#ededed]' : 'bg-[#ededed] text-[#000f36]'
-            ]"
           >
             <li
               v-for="(item, index) in navItems"
@@ -45,14 +42,15 @@
               <a
                 :href="item.href"
                 :class="[
-                  'font-bold hover:text-[#00abf0]',
-                  scrolledPastBanner ? 'text-[#ededed]' : 'text-[#000f36]'
+                  'font-bold text-[#000f36] hover:text-[#00abf0]',
+                  scrolledPastBanner ? 'text-[#000f36]' : ''
                 ]"
               >
                 {{ item.name }}
               </a>
             </li>
           </ul>
+
 
   
   </section>
@@ -66,32 +64,37 @@
         </div>
         <div class="btn-box">
           <a href="/files/OmarRezk_FinalResume.docx.pdf" class="btn btnLink text-[15px] md:text-[25px] text-[#ededed]">Resume</a>
-          <a href="mailto:omar.rizk6@gmail.com" class="btn btnLink text-[15px] md:text-[25px] text-[#ededed]">Let's Talk</a>
+          <a href="mailto:omar.rizk6@gmail.com" class="btn btnLink text-[15px] md:text-[25px] text-[#ededed]">Let's Connect</a>
         </div>
     </div>
   </section>
 
-  <section class="header-container">
+  <section class="header-container mb-5 mt-5 md:mt-2 md:mb-2">
     <div class="header-content">
 
-        <div id="aboutme" class="flex flex-col items-center text-center w-full mt-5 md:mt-2">
+      <!-- Wrap both sections in flex container -->
+      <div class="flex flex-col md:flex-row w-full gap-6">
+
+        <!-- ABOUT ME section -->
+        <div id="aboutme" class="flex flex-col items-center text-center w-full md:w-1/2">
           <h1 class="text-[50px] md:text-[60px] text-[#000f36] font-semibold mb-2">ABOUT ME</h1>
           <div class="h-[6px] w-20 bg-[#00abf0] rounded mb-5"></div>
 
-          <div class="text-[20px] text-[#000f36] md:text-[35px]">
+          <div class="text-[20px] text-[#000f36] md:text-[25px] px-4 md: text-left">
             <p>
-            I am a Web Developer with a passion for creating web applications and interaction design projects. My journey is constantly
-            evolving through experience I have gained from working on impactful projects, developing efficient solutions and adding to my
-            skill set through continuous education and learning and staying up-to-date with the latest industry technologies.
+              I am a Web Developer with a passion for creating web applications and interaction design projects. My journey is constantly
+              evolving through experience I have gained from working on impactful projects, developing efficient solutions and adding to my
+              skill set through continuous education and learning and staying up-to-date with the latest industry technologies.
             </p>
           </div>
         </div>
 
-        <div class="flex flex-col items-center text-center w-full mt-5 md:mt-2">
+        <!-- SKILLS section -->
+        <div class="flex flex-col items-center text-left w-full md:w-1/2">
           <h1 class="text-[50px] md:text-[60px] text-[#000f36] font-semibold mb-2">SKILLS</h1>
           <div class="h-[6px] w-20 bg-[#00abf0] rounded mb-5"></div>
 
-          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 w-full max-w-6xl">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full px-4">
             <div
               v-for="(skill, index) in skills"
               :key="index"
@@ -105,11 +108,26 @@
           </div>
         </div>
 
-
-
+      </div>
     </div>
-
   </section>
+
+  <section class="header-container mb-5 mt-5 md:mt-2 md:mb-2">
+    <div class="header-content">
+
+      <div class="flex flex-col md:flex-row w-full gap-6">
+
+        <!-- Projects Section -->
+        <div id="projects" class="flex flex-col items-center text-center w-full">
+          <h1 class="text-[50px] md:text-[60px] text-[#000f36] font-semibold mb-2">PROJECTS</h1>
+          <div class="h-[6px] w-20 bg-[#00abf0] rounded mb-5"></div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 
 </template>
 
@@ -132,7 +150,8 @@ export default {
         { name: 'React', icon: 'devicon-react-original-wordmark' },
         { name: 'Figma', icon: 'devicon-figma-plain' },
         { name: 'Photoshop', icon: 'devicon-photoshop-plain' },
-        { name: 'Illustrator', icon: 'devicon-illustrator-plain' }
+        { name: 'Illustrator', icon: 'devicon-illustrator-plain' },
+        { name: 'Angular', icon: 'devicon-angular-plain'}
       ],
       headerText: [
         'Web Developer...',
@@ -220,7 +239,7 @@ body {
 }
 
 .nav-scrolled {
-  background-color: #ededed;
+  background-color: #fff;
   transition: background-color 0.3s ease;
 }
 
@@ -244,7 +263,6 @@ body {
 }
 
 .header-container {
-  min-height: 45vh;
   display: flex;
   justify-content: center;
   align-items: center;
