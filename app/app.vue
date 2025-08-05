@@ -41,6 +41,21 @@
       <span class="language-text">{{ skill.name }}</span>
     </div>
   </div>
+
+  <section class="container content-container">
+    <div class="left-box">
+      <div class="about-box">
+          <div class="line"></div>
+          <h1 class="content-text">About</h1>
+        </div>
+    </div>
+    <div class="right-box">
+      <div>
+        <h1 class="content-header">Hello</h1>
+        <p class="content-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat quidem quisquam sed accusamus vitae aspernatur temporibus tenetur illo quia. Cumque nisi eaque dolore. Illo sunt facere natus tempora minima dolore.</p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -119,7 +134,6 @@ body {
 
 }
 
-
 .banner-header {
   font-size: 65px;
   margin: 0;
@@ -190,6 +204,53 @@ body {
 .banner-btn.outlined:hover {
   background-color: #00abf0;
   color: #000f36;
+}
+
+.content-container {
+  margin-top: 25px;
+  display: flex;
+}
+
+.left-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-box {
+  width: 25%;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  transition: transform 0.3s ease;
+
+}
+
+.right-box {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-header {
+  font-size: 25px;
+  color: #fff;
+}
+
+.content-text {
+  font-size: 25px;
+  color: #fff;
+}
+
+.line {
+  width: 150px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.about-box:hover {
+  transform: translateX(10px);
 }
 
 
