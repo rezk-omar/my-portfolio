@@ -9,23 +9,28 @@
     </div> -->
   </div>
 
-  <section class="container banner">
-    <div class="banner-content">
-      <h1 class="banner-header">Hello.</h1>
-
-      <div class="banner-line-row">
-        <div class="banner-line"></div>
-        <h1 class="banner-header2">I'm Omar</h1>
+  <section class="banner">
+    <div class="container banner-wrapper">
+      
+      <div class="banner-content">
+        <h1 class="banner-header">Hello.</h1>
+        
+        <div class="banner-line-row">
+          <div class="banner-line"></div>
+          <h1 class="banner-header2">I'm Omar</h1>
+        </div>
+        
+        <h1 class="banner-subheader">Web Developer</h1>
+        
+        <div class="banner-btn_box">
+          <a href="your-resume-link.pdf" class="banner-btn filled">Resume</a>
+          <a href="#contact" class="banner-btn outlined">Let's Connect</a>
+        </div>
       </div>
-
-      <h1 class="banner-subheader">Web Developer</h1>
-
-      <div class="banner-btn_box">
-        <a href="your-resume-link.pdf" class="banner-btn">Resume</a>
-        <a href="#contact" class="banner-btn">Let's Connect</a>
-      </div>
+      <img src="/img/man-style.png" alt="Omar portrait" class="banner-img" />
     </div>
   </section>
+
 
 
 
@@ -92,9 +97,28 @@ body {
 .banner {
   color: #fff;
   position: relative;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
 }
+
+.banner-content {
+    text-align: left;
+}
+
+.banner-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px; 
+}
+
+.banner-img {
+  width: 350px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+
+}
+
 
 .banner-header {
   font-size: 65px;
@@ -114,7 +138,7 @@ body {
 
 .banner-line-row {
   position: relative;
-  margin-left: calc(-50vw + 50%); 
+  margin-left: calc(-41vw + 50%); 
   width: 100vw;
   max-width: 100vw;
   display: flex;
@@ -138,19 +162,36 @@ body {
 }
 
 .banner-btn {
-  font-size: 35px;
+  font-size: 32px;
   padding: 12px 24px;
-  background-color: #000f36;
-  color: #fff;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.banner-btn:hover {
+.banner-btn.filled {
   background-color: #00abf0;
+  color: #000f36;
+  border: 2px solid #00abf0;
 }
+
+.banner-btn.filled:hover {
+  background-color: transparent;
+  color: #00abf0;
+}
+
+.banner-btn.outlined {
+  background-color: transparent;
+  color: #00abf0;
+  border: 2px solid #00abf0;
+}
+
+.banner-btn.outlined:hover {
+  background-color: #00abf0;
+  color: #000f36;
+}
+
 
 
 .language-container {
