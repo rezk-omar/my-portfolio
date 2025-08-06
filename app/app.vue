@@ -18,8 +18,8 @@
             </div>
             <h1 class="banner-subheader">Web Developer</h1>
             <div class="banner-btn_box">
-              <a href="your-resume-link.pdf" class="banner-btn filled">Resume</a>
-              <a href="#contact" class="banner-btn outlined">Let's Connect</a>
+              <a href="/files/OmarRezk_FinalResume.docx.pdf" class="banner-btn filled">Resume</a>
+              <a href="https://www.linkedin.com/in/omarrezk/" class="banner-btn outlined">Let's Connect</a>
             </div>
           </div>
         </div>
@@ -194,12 +194,12 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 180px;
-  height: 180px;
+  width: 20px;
+  height: 20px;
   background: radial-gradient(
     circle,
-    rgba(0, 171, 240, 0.05) 0%,   /* very faint center (5%) */
-    transparent 100%             /* fully fades out */
+    rgba(0, 171, 240, 0.25) 0%,
+    transparent 100%  
   );
   border-radius: 50%;
   pointer-events: none;
@@ -208,10 +208,6 @@ body {
   mix-blend-mode: screen;
   transition: transform 0.05s ease;
 }
-
-
-
-
 
 .navigation-bar {
   display: flex;
