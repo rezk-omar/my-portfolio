@@ -198,7 +198,7 @@ body {
   height: 20px;
   background: radial-gradient(
     circle,
-    rgba(0, 171, 240, 0.25) 0%,
+    rgba(225, 225, 225, 0.25) 0%,
     transparent 100%  
   );
   border-radius: 50%;
