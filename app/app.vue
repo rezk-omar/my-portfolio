@@ -27,15 +27,30 @@
 
       <!-- Navigation below banner -->
       <div class="left-box">
-        <div class="about-box" @click="scrollToSection('about')">
+        <div 
+        class="about-box"
+        :class="{ active: activeSection === 'about'}"
+        @click="scrollToSection('about')">
           <div class="line"></div>
           <h1 class="content-text">About</h1>
         </div>
-        <div class="about-box" @click="scrollToSection('experience')">
+        <div 
+        class="about-box"
+        :class="{ active: activeSection === 'experience'}"
+        @click="scrollToSection('experience')">
           <div class="line"></div>
           <h1 class="content-text">Experience</h1>
         </div>
+        <div 
+        class="about-box"
+        :class="{ active: activeSection === 'projects'}"
+        @click="scrollToSection('projects')">
+          <div class="line"></div>
+          <h1 class="content-text">Projects</h1>
+        </div>
       </div>
+
+      <!-- Skills Section -->
     </div>
 
     <!-- RIGHT SECTION -->
@@ -91,6 +106,7 @@
 export default {
   data() {
     return {
+            activeSection: null,
             skills: [
               { name: 'HTML5', icon: 'devicon-html5-plain' },
               { name: 'JavaScript', icon: 'devicon-javascript-plain' },
@@ -102,6 +118,36 @@ export default {
               { name: 'Angular', icon: 'devicon-angular-plain'}
             ],
             experiences: [
+                {
+                  date: 'March 2025 - Present',
+                  title: 'Junior Web Developer - 1063 Guiddelines',
+                  details: [
+                    
+                  ],
+                  tools: [
+                    'devicon-nuxt-original',
+                    'devicon-javascript-plain',
+                    'devicon-vuejs-plain',
+                    'devicon-tailwindcss-original'
+
+                  ]
+                },
+                {
+                date: 'Dec 2024 - March 2025',
+                title: 'Junior Frontend Developer - Brite Egypt',
+                details: [
+                  'Developed a modular and interactive time picker component in Angular, leveraging core fundamentals such as data binding, event handling, and component-based architecture.',
+                  'Designed a responsive UI with SCSS theming, hover effects, and PrimeIcons, ensuring seamless time selection with AM/PM toggle and real-time formatting.',
+                  'Created a responsive and interactive sidebar navigation component optimizing UI with scss animations, SVG icons, and smooth transitions, ensuring scalability, performance, and consistent theming.',
+                  'Developed a dynamic announcement component, enabling users to create and manage team or company-wide announcements.',
+                  "Implemented adaptive UI logic to modify component behavior when multiple announcements exist, created a modal popup to display announcements in latest to oldest order, utilizing Angular's component interaction and state management for real-time updates."
+                ],
+                tools: [
+                  'devicon-angular-plain',
+                  'devicon-typescript-plain',
+                  'devicon-figma-plain',
+                ]
+              },
               {
                 date: 'Aug 2020 - Aug 2024',
                 title: 'Technical Specialist — Ghost Kitchens Brands',
@@ -158,6 +204,7 @@ export default {
   },
    methods: {
     scrollToSection(id) {
+      this.activeSection = id;
       const el = document.getElementById(id);
       if (el) {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -172,7 +219,6 @@ export default {
     cursor.style.left = `${e.clientX}px`;
   });
 }
-
 }
 
 </script>
@@ -299,10 +345,9 @@ body {
   margin-bottom: 20px;
 }
 
-
 .banner-line {
   width: 250px;
-  height: 7px;
+  height: 3px;
   background-color: #f5f7fa;
   margin-bottom: 10px;
 }
@@ -374,6 +419,12 @@ body {
   opacity: .2;
 }
 
+.about-box.active {
+  opacity: 1;
+  transform: translateX(10px);
+}
+
+
 .right-box {
   width: 100%;
   display: flex;
@@ -408,7 +459,7 @@ body {
 }
 
 .line {
-  width: 150px;
+  width: 45px;
   height: 3px;
   background-color: #f5f7fa;
   margin-bottom: 10px;
